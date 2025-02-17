@@ -59,9 +59,9 @@ const providers = {
   }),
   hcloud: ({ region = 'fsn1', access_key = '', secret_key = '' }) => ({
     bucket_location: region,
-    host_base: `fsn1.your-objectstorage.com`,
-    host_bucket: `%(bucket)s.fsn1.your-objectstorage.com`,
-    website_endpoint: '',
+    host_base: `${region}.your-objectstorage.com`,
+    host_bucket: `%(bucket)s.${region}.your-objectstorage.com`,
+    website_endpoint: `https://${region}.your-objectstorage.com/%(bucket)s',
     access_key,
     secret_key,
   })
